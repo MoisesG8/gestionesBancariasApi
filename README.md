@@ -2,18 +2,27 @@
 
 Servicio API REST realizado en Java Spring Boot.
 
-
 # Versiones
 
 Java 17
-Maven 
+Maven
 Spring boot 3.2.0
 Packaging Jar
 
+## EJECUTAR CONTENEDOR DE DOCKER CON BASE DE DATOS.
+
+Ejecutar el archivo yaml, llamado despliegue, utilizar el siguiente comando: docker-compose -f despliegue.yml up, luego de ejecutar el archivo, verificar que el contenedor se encuentre arriba, utilizar un gestor de bd para conectarse a la instancia, server: localhost, port:1433, username:sa, password:SQL#1234, una vez hecho eso, ejecutar los script de base de datos en el siguiente orden:
+NOTA: ESTOS ARCHIVO SE ENCUENTRAN EN LAS CARPETAS, DDL, DML Y TRIGGERS EL ORDEN DE EJECUCION ES EL SIGUIENTE:
+
+1. SQLQuery_DDL_CreateDB_1
+2. SQLQuery_DDL_CreateTablas_2
+3. SQLQuery_NumeroCuenta_3 <-- verificar que se tiene selecciona la base de datos creada anteriormente cuando se ejecute la creación de los triggers.
+4. SQLQuery_NumeroChequera_4 <-- verificar que se tiene selecciona la base de datos creada anteriormente cuando se ejecute la creación de los triggers.
+5. SQLQuery_DML_5
+
 ## Ejecutar el proyecto
 
-Construir el proyecto para que MAVEN gestione la descarga de todas las dependencias que este utiliza, previamente ya debe estar levantado el contenedor de docker que contiene la base de datos a la cual el servicio se va a conectar,
-la base de datos escuchará peticiones a traves del puerto 1433, luego de eso se debe construir este componente en spring boot y una vez ya este levantado se procede a levantar el componente web construido en Next JS.
+Construir el proyecto para que MAVEN gestione la descarga de todas las dependencias que este utiliza.
 
 ## Cadena de conexión a base de datos
 
