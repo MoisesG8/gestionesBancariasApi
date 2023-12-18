@@ -1,7 +1,8 @@
-CREATE DATABASE bancoprueba
+USE bancoprueba;
 
 /**TABLAS Y RELACIONES*/
 BEGIN TRANSACTION
+    USE bancoprueba
     CREATE TABLE Clientes(
         ClienteID INT IDENTITY(1,1) PRIMARY KEY,
         Nombre NVARCHAR(100),
@@ -41,7 +42,7 @@ BEGIN TRANSACTION
         CantidadCheques INT,
         EstadoChequera NVARCHAR(20),
         FechaVencimiento DATE,
-        NumeroChequera NVARCHAR(9)
+        NumeroChequera NVARCHAR(11)
     );   
 
     CREATE TABLE Cheques(
@@ -77,5 +78,3 @@ BEGIN TRANSACTION
     INCREMENT BY 1
     NO CACHE;
 COMMIT;
-
-

@@ -1,6 +1,7 @@
 /**
 INSERTS
 */
+USE bancoprueba
 
 BEGIN TRANSACTION
     INSERT INTO TiposDeCuentas (NombreTipo, Descripcion)

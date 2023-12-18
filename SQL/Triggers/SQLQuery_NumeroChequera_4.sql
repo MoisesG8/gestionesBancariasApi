@@ -1,3 +1,4 @@
+
 CREATE TRIGGER TR_Chequeras_Insert
 ON Chequeras
 INSTEAD OF INSERT
