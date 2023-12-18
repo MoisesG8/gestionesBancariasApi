@@ -2,7 +2,6 @@ USE bancoprueba;
 
 /**TABLAS Y RELACIONES*/
 BEGIN TRANSACTION
-    USE bancoprueba
     CREATE TABLE Clientes(
         ClienteID INT IDENTITY(1,1) PRIMARY KEY,
         Nombre NVARCHAR(100),
