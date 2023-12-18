@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "f9bca93f-923b-4995-9709-0fbd4d1e0b39",
+		"name": "GestionesApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "13781372"
+	},
+	"item": [
+		{
+			"name": "ObtenerClientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:9000/api/gestiones/clientes"
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"telefono\": \"78443965\",\r\n        \"direccion\": \"Ciudad de Cerro Gordo\",\r\n        \"nombre\": \"Erick\",\r\n        \"fechaNacimiento\": \"1990-20-06\",\r\n        \"apellido\": \"Villanueva\",\r\n        \"numeroIdentificacion\": \"3620456182201\",\r\n        \"correoElectronico\": \"ericka@cliente.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9000/api/gestiones/agregarCliente"
+			},
+			"response": []
+		},
+		{
+			"name": "agregarCuenta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"idCliente\": 1,\r\n        \"idTipoCuenta\": 2,\r\n        \"estado\": \"Activa\",\r\n        \"monto\": 110500.00,\r\n        \"cantidadCheques\": 20,\r\n        \"estadoChequera\" : \"Activa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9000/api/gestiones/agregarCuenta"
+			},
+			"response": []
+		},
+		{
+			"name": "obtenerCliente y Cuentas asociadas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:9000/api/gestiones/obtenerClientesYCuentas?ID=1",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"gestiones",
+						"obtenerClientesYCuentas"
+					],
+					"query": [
+						{
+							"key": "ID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dar de baja a un cliente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idCliente\" : 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:9000/api/gestiones/bajaCliente"
+			},
+			"response": []
+		}
+	]
+}
