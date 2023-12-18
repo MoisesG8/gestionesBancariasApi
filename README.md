@@ -12,7 +12,8 @@ Packaging Jar
 
 ## Ejecutar el proyecto
 
-Construir el proyecto para que MAVEN gestione la descarga de todas las dependencias que este utiliza.
+Construir el proyecto para que MAVEN gestione la descarga de todas las dependencias que este utiliza, previamente ya debe estar levantado el contenedor de docker que contiene la base de datos a la cual el servicio se va a conectar,
+la base de datos escuchará peticiones a traves del puerto 1433, luego de eso se debe construir este componente en spring boot y una vez ya este levantado se procede a levantar el componente web construido en Next JS.
 
 ## Cadena de conexión a base de datos
 
